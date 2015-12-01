@@ -5,7 +5,7 @@
       var context = new (window.AudioContext || window.webkitAudioContext)(),
           request = new XMLHttpRequest();
 
-      request.responseType = "arraybuffer";      
+      request.responseType = "arraybuffer";
       request.open("GET", uri, true);
 
       // XHR failed
@@ -66,7 +66,5 @@
     } else {
       this.loopify = loopify;
     }
-
-    function noop() {}
 
 })();
