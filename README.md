@@ -2,6 +2,8 @@
 
 Some basic seamless looping with the WebAudioAPI.  Works in [some browsers](http://caniuse.com/#feat=audio-api), not IE so much.
 
+There's a [very brief demo](http://veltman.github.io/loopify/demo.html).
+
 ## Why?
 
 Because looping an HTML5 audio element is generally inconsistent and not seamless.  You'll often get a little gap at the beginning of every new play with something like this:
