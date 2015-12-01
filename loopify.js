@@ -29,23 +29,30 @@
 
         function play() {
 
+          // Stop if it's already playing
           stop();
 
+          // Create a new source (can't replay an existing source)
           source = context.createBufferSource();
           source.connect(context.destination);
 
+          // Set the buffer
           source.buffer = buffer;
           source.loop = true;
 
+          // Play it
           source.start(0);
 
         }
 
         function stop() {
+
+          // Stop and clear if it's playing
           if (source) {
             source.stop();
             source = null;
           }
+
         }
 
         cb(null,{
