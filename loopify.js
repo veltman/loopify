@@ -8,6 +8,8 @@
       request.responseType = "arraybuffer";
       request.open("GET", uri, true);
 
+      var gainNode = context.createGain();
+
       // XHR failed
       request.onerror = function() {
         cb(new Error("Couldn't load audio from " + uri));
@@ -55,16 +57,37 @@
 
         }
 
+        function rate(rate) {
+
+          // Set current loop rate (pitch/velocity)
+          if (source) {
+            source.playbackRate.value = rate;
+          }
+
+        }
+        
+        function gain(gain) {
+          
+          // Set current loop gain
+          if (source) {
+            gainNode.gain.value = gain - 1;
+            gainNode.connect(context.destination);
+            source.connect(gainNode);
+          }
+        }
+
         cb(null,{
           play: play,
-          stop: stop
+          stop: stop,
+          rate: rate,
+          gain: gain
         });
 
       }
 
     }
 
-    loopify.version = "0.1";
+    loopify.version = "0.2";
 
     if (typeof define === "function" && define.amd) {
       define(function() { return loopify; });
