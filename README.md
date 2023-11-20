@@ -68,7 +68,7 @@ If you call `loop.play()` on a loop that's already playing, it will reset to the
 
 ## Notes
 
-You should probably use `.wav` files for short loops, because compressed formats like `.mp3` produce [different results in different browsers](https://forestmist.org/blog/web-audio-api-loops-and-formats).
+You should probably use `.wav` files for short loops, because compressed formats like `.mp3` produce [different results in different browsers]([https://forestmist.org/blog/web-audio-api-loops-and-formats](https://web.archive.org/web/20210616190447/https://forestmist.org/blog/web-audio-api-loops-and-formats)).
 
 ## License
 
